@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TpNoté</title>
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h1>Gestion d'une audiothèque</h1>
+            </header>
+            <main>
+                <div>
+                    <p>Nombre d'albums répertoriés</p>
+                    <p id="num_albums"></p>
+                </div>
+                <select id="album_list" size="10"></select>
+                <div>
+                    <input type="button" id="btn_add" value="Ajouter"/>
+                    <input type="button" id="btn_delete" value="Supprimer" />
+                </div>
+                <div>
+                    <label>Êtes-vous sûr de retirer cet album ?</label>
+                    <input type="button" id="btn_yes" value="Oui">
+                    <input type="button" id="btn_no" value="Non">
+                </div>
+                <div id="add_album">
+                    <h2>Nouvel album</h2>
+                    <form id="form">
+                        <div>
+                            <div>
+                                <input type="radio" name="solist" id="inp_solist" />
+                                <label for="solist">Soliste</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="band" id="inp_band" />
+                                <label for="band">Groupe</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="other" id="inp_other" />
+                                <label for="other">Autre</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="title">Titre</label>
+                            <input type="text" name="title" id="inp_title"/>
+                            <label for="interpret">Interprète</label>
+                            <input type="text" name="interpret" id="inp_interpret">
+                            <div>
+                                <label for="pists">Plages</label>
+                                <input type="number" name="pists" id="inp_pists">
+                                <input type="checkbox" name="mini" id="inp_mini">
+                                <label for="mini">Mini album</label>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="button" id="btn_confirm" value="Valider">
+                            <input type="button" id="btn_cancel" value="Annuler">
+                        </div>
+                    </form>
+                    <p>Erreur : Vous n'avez pas renseigner toutes les données obligatoires.</p>
+                </div>
+    
+            </main>
+            
+        </div>
+    </body>
+</html>
