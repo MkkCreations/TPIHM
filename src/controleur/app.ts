@@ -22,9 +22,9 @@ vueTpNoté.init({
 
 vueTpNoté.form.btnAddAlbum.addEventListener('click', function() { vueTpNoté.displayAddingForm()});
 vueTpNoté.form.inpPists.addEventListener('change', () => { vueTpNoté.isNotMini()});
-vueTpNoté.form.btnCancel.addEventListener('click', () => { vueTpNoté.cancelForm()});
 vueTpNoté.form.btnConfirm.addEventListener('click', (event) => {vueTpNoté.validateForm(event)})
-vueTpNoté.form.btnDeleteAlbum.addEventListener('click', () => {vueTpNoté.deleteOption(vueTpNoté.form.listAlbum.options)});
+/* vueTpNoté.form.btnCancel.addEventListener('click', () => { vueTpNoté.cancelForm()});
+vueTpNoté.form.btnDeleteAlbum.addEventListener('click', () => {vueTpNoté.deleteOption(vueTpNoté.form.listAlbum.options)}); */
 
 
 

@@ -46,7 +46,7 @@ class VueTpNoté {
         let interpret = this.form.inpInterpret.value;
         let pists = this.form.inpPists.value;
 
-        if(!solist.checked && !band.checked && !other.checked){
+       /*  if(!solist.checked && !band.checked && !other.checked){
             this.form.pError.hidden = false;
         }else if(title.length === 0 || interpret.length === 0 || Number(pists) <= 0){
             this.form.pError.hidden = false;
@@ -63,9 +63,9 @@ class VueTpNoté {
             this.form.listAlbum.appendChild(opt);
         }
         this.numAlbum();
-        this.init(this.form);
+        this.init(this.form); */
     }
-    cancelForm(): void {
+/*     cancelForm(): void {
         this.form.divAddAlbum.hidden = true;
         this.form.listAlbum.disabled = false;
     }
@@ -77,7 +77,7 @@ class VueTpNoté {
     numAlbum(): void {
         let n = this.form.listAlbum.options;
         this.form.numberAlbum.innerHTML = n.length.toString();
-    }
+    } */
 
 
 }
