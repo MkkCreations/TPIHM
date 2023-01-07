@@ -17,55 +17,57 @@
                     <p>Nombre d'albums répertoriés</p>
                     <p id="num_albums"></p>
                 </div>
-                <select id="album_list" size="10"></select>
+                <select id="album_list" size="10" ></select>
                 <div>
                     <input type="button" id="btn_add" value="Ajouter"/>
                     <input type="button" id="btn_delete" value="Supprimer" />
                 </div>
                 <div>
                     <label>Êtes-vous sûr de retirer cet album ?</label>
-                    <input type="button" id="btn_yes" value="Oui">
-                    <input type="button" id="btn_no" value="Non">
+                    <input type="button" id="btn_yes" value="Oui" />
+                    <input type="button" id="btn_no" value="Non" />
                 </div>
                 <div id="add_album">
                     <h2>Nouvel album</h2>
                     <form id="form">
                         <div>
-                            <div>
-                                <input type="radio" name="solist" id="inp_solist" />
-                                <label for="solist">Soliste</label>
+                            <div class="form_div_1">
+                                <div id="inp_radio" name="inp_radio">
+                                    <input type="radio" name="inp_radio" id="inp_solist" value="soliste" /> Soliste
+                                    <br>
+                                    <input type="radio" name="inp_radio" id="inp_band" value="groupe" /> Groupe
+                                    <br>
+                                    <input type="radio" name="inp_radio" id="inp_other" value="autre"/> Autre
+                                </div>
                             </div>
-                            <div>
-                                <input type="radio" name="band" id="inp_band" />
-                                <label for="band">Groupe</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="other" id="inp_other" />
-                                <label for="other">Autre</label>
+                            <div class="form_div_2">
+                                <div class="div_inp">
+                                    <label for="title">Titre</label>
+                                    <input type="text" name="title" id="inp_title"/>
+                                </div>
+                                <div class="div_inp">
+                                    <label for="interpret">Interprète</label>
+                                    <input type="text" name="interpret" id="inp_interpret" />
+                                </div>
+                                <div>
+                                    <label for="pists">Plages</label>
+                                    <input type="number" name="pists" id="inp_pists" min="0" />
+                                    <input type="checkbox" name="mini" id="inp_mini" />
+                                    <label for="mini">Mini album</label>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <label for="title">Titre</label>
-                            <input type="text" name="title" id="inp_title"/>
-                            <label for="interpret">Interprète</label>
-                            <input type="text" name="interpret" id="inp_interpret">
-                            <div>
-                                <label for="pists">Plages</label>
-                                <input type="number" name="pists" id="inp_pists">
-                                <input type="checkbox" name="mini" id="inp_mini">
-                                <label for="mini">Mini album</label>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="button" id="btn_confirm" value="Valider">
-                            <input type="button" id="btn_cancel" value="Annuler">
+                        <div class="form_div_3">
+                            <input type="submit" id="btn_confirm" value="Valider" />
+                            <input type="button" id="btn_cancel" value="Annuler" />
                         </div>
                     </form>
-                    <p>Erreur : Vous n'avez pas renseigner toutes les données obligatoires.</p>
+                    <p id="error">Erreur : Vous n'avez pas renseigner toutes les données obligatoires.</p>
                 </div>
     
             </main>
             
         </div>
+        <script type="module" src="../controleur/app.js"></script>
     </body>
 </html>

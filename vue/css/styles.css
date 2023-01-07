@@ -13,6 +13,13 @@ body {
     background-color: cadetblue;
 }
 
+input {
+    margin: 5px 0;
+    padding: 3px;
+    border-radius: 6px;
+    border: 1px solid gray;
+}
+
 #container {
     width: 50%;
     background-color: floralwhite;
@@ -32,13 +39,28 @@ main {
 }
 
 #album_list {
-    width: 100%;
+    width: 90%;
     background-color: #fff;
+    margin: 1% 5%;
+    text-align: left;
+    padding: 5px;
 }
-
+main > div:first-of-type {
+    padding-left: 5%;
+    margin: 8px 0px 4px 0px;
+}
+main > div:first-of-type p {
+    display: inline-block;
+}
 main > div:nth-of-type(2) {
     text-align: right;
     margin: 8px 0;
+    padding-right: 20px;
+}
+main > div:nth-of-type(2) > input {
+    padding: 6px;
+    border: 1px solid rgb(1, 97, 142);
+    background-color: rgb(50, 160, 185);
 }
 main > div:nth-of-type(3) {
     display: none;
@@ -46,16 +68,79 @@ main > div:nth-of-type(3) {
     color: rgb(189, 50, 50);
 }
 
-#form {
-    margin: 20px;
-}
-
 #add_album {
-    background: rgb(82, 118, 152);
+    background: rgb(168, 171, 173);
 }
 
 #add_album h2 {
     text-align: center;
     background-color: grey;
    
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 0 20px;
+}
+
+#form > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form_div_2{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.div_inp{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.div_inp label{
+    flex: 1;
+    text-align: right;
+}
+#inp_title,
+#inp_interpret {
+    flex: 3;
+    width: 70px;
+}
+
+.form_div_2 > div:last-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+#inp_pists {
+    width: 40px;
+    margin: 0 15px;
+}
+#inp_mini {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    
+}
+
+.form_div_3 {
+    text-align: right;
+}
+.form_div_3 > input {
+    padding: 6px;
+    border: 1px solid rgb(1, 97, 142);
+    background-color: rgb(50, 160, 185);
+}
+
+#error {
+    padding: 6px;
+    text-align: center;
+    color: brown;
+
 }

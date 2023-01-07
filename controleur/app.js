@@ -1,5 +1,4 @@
-import {vueTpNoté} from './class.js';
-
+import { vueTpNoté } from './class.js';
 vueTpNoté.init({
     numberAlbum: document.querySelector("[id=num_albums]"),
     listAlbum: document.querySelector("[id=album_list]"),
@@ -19,12 +18,9 @@ vueTpNoté.init({
     divAddAlbum: document.querySelector("[id=add_album]"),
     pError: document.querySelector("[id=error]")
 });
-
-vueTpNoté.form.btnAddAlbum.addEventListener('click', function() { vueTpNoté.displayAddingForm()});
-vueTpNoté.form.inpPists.addEventListener('change', () => { vueTpNoté.isNotMini()});
-vueTpNoté.form.btnCancel.addEventListener('click', () => { vueTpNoté.cancelForm()});
-vueTpNoté.form.btnConfirm.addEventListener('click', (event) => {vueTpNoté.validateForm(event)})
-vueTpNoté.form.btnDeleteAlbum.addEventListener('click', () => {vueTpNoté.deleteOption(vueTpNoté.form.listAlbum.options)});
-
-
-
+vueTpNoté.form.btnAddAlbum.addEventListener('click', function () { vueTpNoté.displayAddingForm(); });
+vueTpNoté.form.inpPists.addEventListener('change', () => { vueTpNoté.isNotMini(); });
+vueTpNoté.form.btnCancel.addEventListener('click', () => { vueTpNoté.cancelForm(); });
+vueTpNoté.form.btnConfirm.addEventListener('click', (event) => { vueTpNoté.validateForm(event); });
+vueTpNoté.form.btnDeleteAlbum.addEventListener('click', () => { vueTpNoté.deleteOption(vueTpNoté.form.listAlbum.options); });
+//# sourceMappingURL=app.js.map
