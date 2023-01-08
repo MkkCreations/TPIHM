@@ -17,14 +17,12 @@ vueTpNoté.init({
     btnConfirm: document.querySelector("[id=btn_confirm]"),
     btnCancel: document.querySelector("[id=btn_cancel]"),
     divAddAlbum: document.querySelector("[id=add_album]"),
-    pError: document.querySelector("[id=error]")
+    pError: document.querySelector("[id=error]"),
+    form: document.querySelector("[id=form]")
 });
 
 vueTpNoté.form.btnAddAlbum.addEventListener('click', function() { vueTpNoté.displayAddingForm()});
 vueTpNoté.form.inpPists.addEventListener('change', () => { vueTpNoté.isNotMini()});
 vueTpNoté.form.btnConfirm.addEventListener('click', (event) => {vueTpNoté.validateForm(event)})
-/* vueTpNoté.form.btnCancel.addEventListener('click', () => { vueTpNoté.cancelForm()});
-vueTpNoté.form.btnDeleteAlbum.addEventListener('click', () => {vueTpNoté.deleteOption(vueTpNoté.form.listAlbum.options)}); */
-
-
-
+vueTpNoté.form.btnCancel.addEventListener('click', () => { vueTpNoté.cancelForm()});
+vueTpNoté.form.btnDeleteAlbum.addEventListener('click', () => {vueTpNoté.deleteOption(vueTpNoté.form.listAlbum.options)});
