@@ -12,16 +12,22 @@ class VueTpNoté {
         this.form.listAlbum.disabled = true;
     }
     isNotMini() {
-        Number(this.form.inpPists.value) < 5 ? this.form.inpMini.disabled = false : this.form.inpMini.disabled = true;
+        if (Number(this.form.inpPists.value) < 5) {
+            this.form.inpMini.disabled = false;
+        }
+        else {
+            this.form.inpMini.checked = false;
+            this.form.inpMini.disabled = true;
+        }
     }
     validateForm(e) {
         e.preventDefault();
         let dataForm = new FormData(this.form.form);
-        let typeArtist = dataForm.get("inp_radio");
-        let title = dataForm.get("title");
-        let interpret = dataForm.get("interpret");
-        let pists = dataForm.get("pists");
-        console.log(typeArtist, title, interpret, pists);
+        const typeArtist = dataForm.get("inp_radio");
+        const title = dataForm.get("title").toString().trim();
+        const interpret = dataForm.get("interpret").toString().trim();
+        const pists = dataForm.get("pists");
+        const mini = this.form.inpMini.checked;
         if (!typeArtist) {
             this.form.pError.hidden = false;
         }
@@ -30,19 +36,30 @@ class VueTpNoté {
         }
         else {
             let opt = document.createElement('option');
+            let isMini = mini ? 'Mini Album - ' : '';
             opt.value = title.toString();
-            opt.innerHTML = title + " " + interpret + " " + typeArtist + " " + pists + " Plages";
+            opt.innerHTML = title + " - " + interpret + " - " + typeArtist + " - " + isMini + pists + " Plages ";
             this.form.listAlbum.appendChild(opt);
             this.numAlbum();
             this.init(this.form);
+            this.resetForm();
         }
     }
+    resetForm() {
+        this.form.radioBand.checked = false;
+        this.form.radioOther.checked = false;
+        this.form.radioSolist.checked = false;
+        this.form.inpMini.checked = false;
+        this.form.inpTitle.value = "";
+        this.form.inpInterpret.value = "";
+        this.form.inpPists.value = "";
+    }
     cancelForm() {
+        this.resetForm();
         this.form.divAddAlbum.hidden = true;
         this.form.listAlbum.disabled = false;
     }
     deleteOption(opt) {
-        console.log(opt);
         opt.remove(opt.selectedIndex);
         this.numAlbum();
     }
@@ -51,6 +68,6 @@ class VueTpNoté {
         this.form.numberAlbum.innerHTML = n.length.toString();
     }
 }
-let vueTpNoté = new VueTpNoté;
+let vueTpNoté = new VueTpNoté();
 export { vueTpNoté };
 //# sourceMappingURL=class.js.map

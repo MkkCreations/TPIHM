@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
 }
 
 body {
@@ -10,28 +11,40 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: cadetblue;
+    background-color: azure;
 }
 
 input {
     margin: 5px 0;
-    padding: 3px;
+    padding: 5px;
     border-radius: 6px;
     border: 1px solid gray;
 }
 
+input[type="text"] {
+    font-size: 1.2em;
+}
+
+input[type="button"] {
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
 #container {
     width: 50%;
-    background-color: floralwhite;
+    background-color: #e9ecef;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.286);
 }
+
 header {
     width: 100%;
     padding: 10px;
-    background-color: azure;
+    background-color: #6c757db6;
     text-align: center;
     box-shadow: 0px 1px 15px rgb(168, 167, 167);
+    color: rgba(0, 0, 0, 0.675);
 }
 
 main {
@@ -45,23 +58,29 @@ main {
     text-align: left;
     padding: 5px;
 }
+
 main > div:first-of-type {
     padding-left: 5%;
     margin: 8px 0px 4px 0px;
 }
+
 main > div:first-of-type p {
     display: inline-block;
+    margin: 5px 0px 0px 0px;
 }
+
 main > div:nth-of-type(2) {
     text-align: right;
     margin: 8px 0;
     padding-right: 20px;
 }
+
 main > div:nth-of-type(2) > input {
     padding: 6px;
     border: 1px solid rgb(1, 97, 142);
     background-color: rgb(50, 160, 185);
 }
+
 main > div:nth-of-type(3) {
     display: none;
     text-align: center;
@@ -69,13 +88,14 @@ main > div:nth-of-type(3) {
 }
 
 #add_album {
-    background: rgb(168, 171, 173);
+    background: #ced4da;
 }
 
 #add_album h2 {
     text-align: center;
-    background-color: grey;
-   
+    background-color: #6c757daf;
+    padding: 5px 0;
+    color: rgba(0, 0, 0, 0.675);
 }
 
 #form {
@@ -89,22 +109,23 @@ main > div:nth-of-type(3) {
     justify-content: space-between;
 }
 
-.form_div_2{
+.form_div_2 {
     width: 60%;
     display: flex;
     flex-direction: column;
 }
 
-.div_inp{
+.div_inp {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.div_inp label{
+.div_inp label {
     flex: 1;
     text-align: right;
 }
+
 #inp_title,
 #inp_interpret {
     flex: 3;
@@ -115,23 +136,25 @@ main > div:nth-of-type(3) {
     display: flex;
     align-items: center;
     justify-content: end;
-    margin-top: 10px;
+    margin: 10px 0px;
 }
 
 #inp_pists {
     width: 40px;
     margin: 0 15px;
 }
+
 #inp_mini {
     width: 20px;
     height: 20px;
     margin-right: 5px;
-    
 }
 
 .form_div_3 {
     text-align: right;
+    margin-bottom: 10px;
 }
+
 .form_div_3 > input {
     padding: 6px;
     border: 1px solid rgb(1, 97, 142);
@@ -142,5 +165,4 @@ main > div:nth-of-type(3) {
     padding: 6px;
     text-align: center;
     color: brown;
-
 }

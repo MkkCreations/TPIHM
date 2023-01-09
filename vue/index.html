@@ -14,8 +14,8 @@
             </header>
             <main>
                 <div>
-                    <p>Nombre d'albums répertoriés</p>
-                    <p id="num_albums"></p>
+                    <p>Nombre d'albums répertoriés : </p>
+                    <p id="num_albums">0</p>
                 </div>
                 <select id="album_list" size="10" ></select>
                 <div>
@@ -33,11 +33,14 @@
                         <div>
                             <div class="form_div_1">
                                 <div id="inp_radio" name="inp_radio">
-                                    <input type="radio" name="inp_radio" id="inp_solist" value="soliste" /> Soliste
+                                    <input type="radio" name="inp_radio" id="inp_solist" value="Soliste" /> 
+                                    <label for="inp_solist">Soliste</label> 
                                     <br>
-                                    <input type="radio" name="inp_radio" id="inp_band" value="groupe" /> Groupe
+                                    <input type="radio" name="inp_radio" id="inp_band" value="Groupe" />
+                                    <label for="inp_band">Groupe</label> 
                                     <br>
-                                    <input type="radio" name="inp_radio" id="inp_other" value="autre"/> Autre
+                                    <input type="radio" name="inp_radio" id="inp_other" value="Autre"/>
+                                    <label for="inp_other">Autre</label> 
                                 </div>
                             </div>
                             <div class="form_div_2">
@@ -58,7 +61,7 @@
                             </div>
                         </div>
                         <div class="form_div_3">
-                            <input type="submit" id="btn_confirm" value="Valider" />
+                            <input type="button" id="btn_confirm" value="Valider" />
                             <input type="button" id="btn_cancel" value="Annuler" />
                         </div>
                     </form>
