@@ -7,6 +7,7 @@ vueTpNoté.init({
     btnDeleteAlbum: document.querySelector("[id=btn_delete]"),
     btnConfirmDelete: document.querySelector("[id=btn_yes]"),
     btnCancelDelete: document.querySelector("[id=btn_no]"),
+    divConfirmDelete: document.querySelector("[id=confirmation]"),
     radioSolist: document.querySelector("[id=inp_solist]"),
     radioBand: document.querySelector("[id=inp_band]"),
     radioOther: document.querySelector("[id=inp_other]"),
@@ -25,4 +26,4 @@ vueTpNoté.form.btnAddAlbum.addEventListener('click', () => { vueTpNoté.display
 vueTpNoté.form.inpPists.addEventListener('change', () => { vueTpNoté.isNotMini() });
 vueTpNoté.form.btnConfirm.addEventListener('click', (event) => { vueTpNoté.validateForm(event) })
 vueTpNoté.form.btnCancel.addEventListener('click', () => { vueTpNoté.cancelForm() });
-vueTpNoté.form.btnDeleteAlbum.addEventListener('click', () => { vueTpNoté.deleteOption(vueTpNoté.form.listAlbum.options) });
+vueTpNoté.form.btnDeleteAlbum.addEventListener('click', () => { vueTpNoté.confirmDelete() });

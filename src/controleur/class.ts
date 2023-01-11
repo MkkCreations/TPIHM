@@ -6,6 +6,7 @@ type HtmlForm = {
     btnDeleteAlbum: HTMLButtonElement,
     btnConfirmDelete: HTMLButtonElement,
     btnCancelDelete: HTMLButtonElement,
+    divConfirmDelete: HTMLDivElement,
     radioSolist: HTMLInputElement,
     radioBand: HTMLInputElement,
     radioOther: HTMLInputElement,
@@ -28,6 +29,7 @@ class VueTpNoté {
 
         this.form.divAddAlbum.hidden = true;
         this.form.pError.hidden = true;
+        this.form.divConfirmDelete.hidden = true;
         this.form.listAlbum.disabled = false;
     }
 
@@ -36,6 +38,8 @@ class VueTpNoté {
     displayAddingForm(): void {
         this.form.divAddAlbum.hidden = false;
         this.form.listAlbum.disabled = true;
+        this.form.divConfirmDelete.hidden = true;
+        this.form.listAlbum.selectedIndex = -1;
     }
 
     isNotMini(): void {
@@ -88,13 +92,23 @@ class VueTpNoté {
         this.form.listAlbum.disabled = false;
     }
 
+    confirmDelete(): void {
+        if(this.form.listAlbum.options.selectedIndex != -1) this.form.divConfirmDelete.hidden = false;
+        this.form.btnConfirmDelete.addEventListener('click', () => {this.deleteOption(this.form.listAlbum.options)});
+        this.form.btnCancelDelete.addEventListener('click', () => {
+            this.form.divConfirmDelete.hidden = true;
+            this.form.listAlbum.selectedIndex = -1;
+        });
+    }
+
     deleteOption(opt: HTMLOptionsCollection): void {
         opt.remove(opt.selectedIndex);
+        this.form.divConfirmDelete.hidden = true;
         this.numAlbum();
     }
-    
+
     numAlbum(): void {
-        let n = this.form.listAlbum.options;
+        const n = this.form.listAlbum.options;
         this.form.numberAlbum.innerHTML = n.length.toString();
     }
 }

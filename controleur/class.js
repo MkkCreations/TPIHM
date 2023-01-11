@@ -3,6 +3,7 @@ class VueTpNoté {
         this._form = form;
         this.form.divAddAlbum.hidden = true;
         this.form.pError.hidden = true;
+        this.form.divConfirmDelete.hidden = true;
         this.form.listAlbum.disabled = false;
     }
     get form() { return this._form; }
@@ -10,6 +11,8 @@ class VueTpNoté {
     displayAddingForm() {
         this.form.divAddAlbum.hidden = false;
         this.form.listAlbum.disabled = true;
+        this.form.divConfirmDelete.hidden = true;
+        this.form.listAlbum.selectedIndex = -1;
     }
     isNotMini() {
         if (Number(this.form.inpPists.value) < 5) {
@@ -59,12 +62,22 @@ class VueTpNoté {
         this.form.divAddAlbum.hidden = true;
         this.form.listAlbum.disabled = false;
     }
+    confirmDelete() {
+        if (this.form.listAlbum.options.selectedIndex != -1)
+            this.form.divConfirmDelete.hidden = false;
+        this.form.btnConfirmDelete.addEventListener('click', () => { this.deleteOption(this.form.listAlbum.options); });
+        this.form.btnCancelDelete.addEventListener('click', () => {
+            this.form.divConfirmDelete.hidden = true;
+            this.form.listAlbum.selectedIndex = -1;
+        });
+    }
     deleteOption(opt) {
         opt.remove(opt.selectedIndex);
+        this.form.divConfirmDelete.hidden = true;
         this.numAlbum();
     }
     numAlbum() {
-        let n = this.form.listAlbum.options;
+        const n = this.form.listAlbum.options;
         this.form.numberAlbum.innerHTML = n.length.toString();
     }
 }

@@ -29,6 +29,9 @@ input[type="button"] {
     cursor: pointer;
     font-size: 1.1em;
 }
+input[type="button"]:hover {
+    filter: opacity(0.8);
+}
 
 #container {
     width: 50%;
@@ -81,10 +84,14 @@ main > div:nth-of-type(2) > input {
     background-color: rgb(50, 160, 185);
 }
 
-main > div:nth-of-type(3) {
-    display: none;
+#confirmation {
     text-align: center;
     color: rgb(189, 50, 50);
+}
+#confirmation > input {
+    border: 1px solid brown;
+    background-color: rgb(191, 73, 73);
+    color: azure;
 }
 
 #add_album {
@@ -126,8 +133,7 @@ main > div:nth-of-type(3) {
     text-align: right;
 }
 
-#inp_title,
-#inp_interpret {
+#inp_title, #inp_interpret {
     flex: 3;
     width: 70px;
 }
