@@ -172,3 +172,15 @@ main > div:nth-of-type(2) > input {
     text-align: center;
     color: brown;
 }
+
+@media screen and (max-width: 950px){
+    .form_div_2 {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 850px){
+    #container{
+        width: 80%;
+    }
+}
